@@ -17,7 +17,7 @@ Opened cmd and ran: aws configure and copy-paste the data obtained from the Acce
 I ran: aws iam list-users to see if aws is configurated properly and see that the user that is appers is the same with the account logged on AWS.
 
 - Python3
-I searched for Python software and downloaded the last version.
+I searched for Python software and downloaded the latest version.
 
 - IDE – VS Code
 Searched and installed Visual Studio Code.
