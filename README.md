@@ -1,105 +1,74 @@
-**DEPLOY CLOUD NATIVE MONITORING APPLICATION ON AMAZON WEB SERVICE**
+# Deploy Cloud Native Monitoring Application on Amazon Web Services (AWS)
 
-<br>
-
-**PREREQUISITIES**
-1.	AWS Account
-2.	Connect AWS Account to CLI Commands
-3.	Python3
-4.	IDE – VS Code
+## Prerequisites
 
 - AWS Account
+- Connect AWS Account to CLI Commands
+- Python 3
+- IDE – VS Code
+
+### AWS Account
 I created an AWS Account to have the possibility to deploy it.
 
-- Connect AWS Account to CLI Commands
-I created an Access Key at my AWS Account for programmatic access.
-Opened cmd and ran: aws configure and copy-paste the data obtained from the Access Key.
-I ran: aws iam list-users to see if aws is configurated properly and see that the user that is appers is the same with the account logged on AWS.
+### Connect AWS Account to CLI Commands
+I created an Access Key in my AWS Account for programmatic access. Then, I opened the command line and ran the command `aws configure` to configure the CLI, copying and pasting the data obtained from the Access Key. I verified the configuration by running `aws iam list-users` to see if AWS is configured properly, confirming that the user appearing is the same as the one logged on AWS.
 
-- Python3
+### Python 3
 I searched for Python software and downloaded the latest version.
 
-- IDE – VS Code
-Searched and installed Visual Studio Code.
+### IDE – VS Code
+I searched for and installed Visual Studio Code.
 
+## What Should I Work On
 
-<br>
+1. Creating a basic monitoring app with Python (Flask)
+2. Create a Dockerfile
+3. Create ECR using Python (Boto3)
+4. Push Docker image to ECR
 
-**WHAT SHOULD I WORK ON**
-1.	Creating a basic monitoring app with Python (Flask)
-2.	Create a Dockerfile
-3.	Create ECR using Python (Boto3)
-4.	Push Docker image to ECR
+## Table of Modules
 
+- [Module 1: Create Monitoring App in Flask Python](#module-1-create-monitoring-app-in-flask-python)
+- [Module 2: Create Dockerfile](#module-2-create-dockerfile)
+- [Module 3: Create ECR using Boto3 Python](#module-3-create-ecr-using-boto3-python)
+- [Module 4: Push Docker Image to ECR](#module-4-push-docker-image-to-ecr)
 
-<br>
+## Module 1: Create Monitoring App in Flask Python
 
-**TABLE OF MODULES**
-Module 1: CREATE MONITORING APP IN FLASK PYTHON	4
-Module 2: CREATE DOCKERFILE	5
-Module 4: PUSH DOCKER IMAGE TO ECR	7
+1. Create a folder and name it `Cloud_Native_Monitoring_App`.
+2. Open VS Code and open the folder.
+3. Create an `app.py` file and write the code for the monitoring app using Flask. Utilize the `psutil` library as needed.
+4. Create a `requirements.txt` file and list the required dependencies.
+5. Create an HTML file to style the app. Create a folder named `template` and create the file `index.html`.
+6. Run the app using the command `python3 app.py`.
 
+### Errors Found During the Process
 
-<br>
+I had installed the latest version of Python, so the versions of requirements didn’t fit. Therefore, I created another environment and installed Python version 3.9 directly.
 
+## Module 2: Create Dockerfile
 
-**Module 1: CREATE MONITORING APP IN FLASK PYTHON**
+1. Create a file named `Dockerfile`.
+2. Search for and import the correct Python image matching the installed version.
+3. Write the Dockerfile to import the correct Python image.
+4. In the terminal, build the Docker image using `docker build -t name-of-the-image`.
+5. Check if it is working properly by running `docker images`.
+6. Containerize the Docker using `docker run -p 5000:5000 image_id`.
 
-Firstly, I created a folder and named: Cloud_Native_Monitoring_App
-Open VS Code and opened the folder.
-Created an app.py file and write the code of the monitoring app.
-I worked with psutil, so I imported the library correctly.
+### Errors Found During the Process
 
-Secondly, I created another file requiriments.txt and wrote the requirements to be installed
+I hadn’t installed Docker software and I initially chose another image for Python at the hub due to the incorrect version. This was eventually resolved by correcting the environment and reinstalling the requirements from `requirements.txt`.
 
-Thirdly I created a html file to style the app.
-I created a folder template and created the file index.html and wrote the code of the code of the style.
+## Module 3: Create ECR using Boto3 Python
 
-Finally, I ran the code: python3 app.py to run the app.
+1. Create an `ecr.py` file and import `boto3`. Refer to `boto3.amazonaws.com` for correct importing.
+2. Write the code to create the ECR repository.
+3. Run the code in the terminal using `python3 ecr.py`.
 
-ERRORS FOUND DURING THE PROCESS:
-I had installed the latest version of python so the versions of requirements didn’t fit. So I created another environment and installed directly the python version 3.9.
+### Errors Found During the Process
 
-<br>
+I encountered some errors while writing the code in `ecr.py`, which required rechecking the functionality with `aws configure` and `aws iam list-users`.
 
+## Module 4: Push Docker Image to ECR
 
-
-**Module 2: CREATE DOCKERFILE**
-
-Firstly, I created a file named Dockerfile, and after I searched on google to import the correct image of the python that I have installed.
-In Dockerfile I wrote the code to import the right image.
-
-Secondly. in terminal I created the image of Dockerfile: docker build -t name-of-the-image.
-To check if it is working properly, run: docker images 
-
-Thirdly, containerize the docker: docker run -p 5000:5000 image_id .
-
-
-ERRORS FOUND DURING THE PROCESS:
-I haven’t installed Docker software and I chose another image to run at hub for Python, because of the incorrect version, that I eventually changed with correcting the environment and reinstalling the requirements from requirements.txt.
-
-
-<br>
-
-
-
-**Module 3: CREATE ECR USING BOTO3 PYTHON**
-
-Firstly, I created an ecr.py file and import boto3
-To import it correctly, I visited: boto3.amazonaws.com
-
-Secondly, I wrote the code and run the code at terminal: python3 ecr.py
-This way the repository is created successfully at AWS account.
-
-
-ERRORS FOUND DURING THE PROCESS:
-I received some errors in writing the code at ecr.py, so I had to check again the functionality with aws configure, and aws iam list-users.
-
-
-<br>
-
-
-
-**Module 4: PUSH DOCKER IMAGE TO ECR**
-
-At the repository created, there is “docker push commands” for windows (since I have a windows operating system) and I copy pasted the code from the list.
+After creating the repository, use the provided "docker push commands" for Windows (since I have a Windows operating system) and copy-paste the code from the list.
