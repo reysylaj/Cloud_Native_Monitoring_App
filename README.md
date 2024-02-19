@@ -8,19 +8,18 @@
 3.	Python3
 4.	IDE – VS Code
 
-
-1.	AWS Account
+- AWS Account
 I created an AWS Account to have the possibility to deploy it.
 
-2.	Connect AWS Account to CLI Commands
+- Connect AWS Account to CLI Commands
 I created an Access Key at my AWS Account for programmatic access.
 Opened cmd and ran: aws configure and copy-paste the data obtained from the Access Key.
 I ran: aws iam list-users to see if aws is configurated properly and see that the user that is appers is the same with the account logged on AWS.
 
-3.	Python3
+- Python3
 I searched for Python software and downloaded the last version.
 
-4.	IDE – VS Code
+- IDE – VS Code
 Searched and installed Visual Studio Code.
 
 
